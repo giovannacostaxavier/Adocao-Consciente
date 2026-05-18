@@ -1,19 +1,155 @@
-*{
+*,*::before,*::after{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    list-style:none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header{
+:root {
+  --gold: #D4956A;
+  --gold-dark: #b8764a;
+  --dark: #1a1a1a;
+  --text: #444;
+  --light-bg: #fdf8f4;
+  --white: #ffffff;
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+}
+
+.navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 24px 60px;
 
-    ul{
-        display: flex;
-        align-items: center;
-        gap: 20px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon{
+    font-size: 28px;
+}
+
+.nomeLogo{
+    display: block;
+    font-family: 'Playfair Display',serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+}
+
+.abaixoNome{
+    display: block;
+    font-size: 11px;
+    color:rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+}
+
+.navLinks{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+
+    a{
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s;
     }
+}
+
+.navLinks a:hover{
+    color: var(--gold);
+}
+
+.navLinks a.botaoNav{
+    background: var(--gold);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+.navLinks a.botaoNav:hover{
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+
+}
+
+.topo{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #2a2a2a;
+}
+
+.imgTopo{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fundoEscuro{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.627) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
+
+}
+
+.topoContent{
+    position: relative;
+    z-index: 10;
+    max-width: 560px;
+    margin-left: 10%;
+    animation: fadeUp 0.9s ease both;
+}
+
+@keyframes fadeUp {
+     from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } 
+    }
+
+    .subtituloTopo { 
+    font-size: 14px; 
+    font-weight: 600; 
+    letter-spacing: 3px; 
+    text-transform: uppercase; 
+    color: rgba(255,255,255,0.8); 
+    margin-bottom: 12px; 
+}
+
+.tituloTopo{
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px,8vw,90px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.descricaoTopo{
+    font-size: 16px;
+    color:rgba(255,255,255,0.85);
+    line-height: 1.7;
+    max-width: 400px;
+    margin-bottom: 36px;
 }
