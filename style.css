@@ -270,3 +270,95 @@ body{
     color: var(--white);
 }
 
+.stats{
+    background-color: var(--dark);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    padding: 70px 60px; 
+    gap: 20px; 
+}
+
+.stat { 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+.stat-num { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 48px; 
+    font-weight: 900; 
+    color: var(--gold); 
+    line-height: 1; 
+}
+.stat-label { 
+    font-size: 14px; color: rgba(255,255,255,0.65); 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+}
+
+.footer { 
+    background: #111; 
+    padding: 40px 60px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+.footer-logo { 
+    display: flex; 
+    align-items:center; 
+    gap: 8px; 
+    color: rgba(255,255,255,0.4); 
+}
+.footer p { 
+    font-size: 13px; 
+    color: rgba(255,255,255,0.4); 
+}
+.footer-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 24px; 
+}
+.footer-links a { 
+    font-size: 13px; 
+    color: rgba(255,255,255,0.5); 
+    text-decoration: none; 
+    transition: color 0.2s; 
+}
+.footer-links a:hover { 
+    color: var(--gold); 
+}
+
+
+@media (max-width: 900px) {
+  .navbar { 
+    padding: 20px 24px; 
+}
+  .section-adopt, .section-dogs { 
+    padding: 60px 24px; 
+}
+  .cards { 
+    grid-template-columns: 1fr 1fr; 
+}
+  .stats { 
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 50px 24px; 
+}
+  .footer { 
+    padding: 30px 24px; 
+    flex-direction: column; 
+    text-align: center; 
+}
+}
+@media (max-width: 600px) {
+  .nav-links { 
+    display: none; 
+}
+  .cards { 
+    grid-template-columns: 1fr; 
+}
+}
+
