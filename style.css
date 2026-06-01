@@ -333,32 +333,83 @@ body{
 }
 
 
-@media (max-width: 900px) {
-  .navbar { 
-    padding: 20px 24px; 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 24px;
+  }
+    .cards {
+  grid-template-columns: 1fr;
+    }
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 0;
 }
-  .section-adopt, .section-dogs { 
-    padding: 60px 24px; 
-}
-  .cards { 
-    grid-template-columns: 1fr 1fr; 
-}
-  .stats { 
-    grid-template-columns: repeat(2, 1fr); 
-    padding: 50px 24px; 
-}
-  .footer { 
-    padding: 30px 24px; 
-    flex-direction: column; 
-    text-align: center; 
-}
-}
-@media (max-width: 600px) {
-  .nav-links { 
-    display: none; 
-}
-  .cards { 
-    grid-template-columns: 1fr; 
-}
-}
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 200;
+    justify-content: center;
+  }
 
+  .navLinks.aberto {
+    display: flex;
+  }
+
+  .navLinks a {
+    font-size: 20px;
+  }
+
+  .menuHamburguer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 300;
+    padding: 4px;
+  }
+
+  .menuHamburguer span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px 24px;
+    gap: 40px;
+  }
+
+  .stat-num {
+    font-size: 36px;
+  }
+
+  .secaoGatos, .secaoCaes {
+    padding: 60px 24px;
+  }
+
+  .footer {
+    padding: 30px 24px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .topoContent {
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 100%;
+  }
+}
