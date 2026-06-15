@@ -17,6 +17,7 @@ body{
     font-family: 'DM Sans', sans-serif;
     color: var(--dark);
     background: var(--white);
+    zoom: 1.2;
 }
 
 .navbar{
@@ -29,8 +30,8 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 24px 60px;
-
 }
+
 .logo{
     display: flex;
     align-items: center;
@@ -84,10 +85,10 @@ body{
     font-weight: 600;
     transition: background 0.2s, transform 0.2s;
 }
+
 .navLinks a.botaoNav:hover{
     background: var(--gold-dark);
     transform: translateY(-2px);
-
 }
 
 .topo{
@@ -113,7 +114,6 @@ body{
     position: absolute;
     inset: 0;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.627) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
-
 }
 
 .topoContent{
@@ -125,10 +125,11 @@ body{
 }
 
 @keyframes fadeUp {
-     from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } 
-    }
+    from { opacity: 0; transform: translateY(30px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
 
-    .subtituloTopo { 
+.subtituloTopo { 
     font-size: 14px; 
     font-weight: 600; 
     letter-spacing: 3px; 
@@ -164,7 +165,6 @@ body{
     padding: 14px 34px;
     border-radius: 50px;
     transition: background 0.2s, transform 0.2s;
-
 }
 
 .btn-doacao:hover { 
@@ -176,6 +176,7 @@ body{
     padding: 70px 60px;
     background: var(--light-bg);
 }
+
 .secaoCaes{
     background: var(--white);
 }
@@ -187,7 +188,6 @@ body{
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 12px;
-
 }
 
 .tituloAdc{
@@ -208,6 +208,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
 .card{
@@ -225,7 +226,7 @@ body{
 
 .imgCG{
     width: 100%;
-    height: 220px;
+    height: 260px;
     background: #e8e8e4;
     overflow: hidden;
     
@@ -233,9 +234,11 @@ body{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center center;
         display: block;
     }
 }
+
 .descricaoBody{
     padding: 20px;
 
@@ -292,8 +295,10 @@ body{
     color: var(--gold); 
     line-height: 1; 
 }
+
 .stat-label { 
-    font-size: 14px; color: rgba(255,255,255,0.65); 
+    font-size: 14px;
+    color: rgba(255,255,255,0.65); 
     letter-spacing: 1px; 
     text-transform: uppercase; 
 }
@@ -307,43 +312,76 @@ body{
     flex-wrap: wrap; 
     gap: 20px; 
 }
+
 .footer-logo { 
     display: flex; 
     align-items:center; 
     gap: 8px; 
     color: rgba(255,255,255,0.4); 
 }
+
 .footer p { 
     font-size: 13px; 
     color: rgba(255,255,255,0.4); 
 }
+
 .footer-links { 
     list-style: none; 
     display: flex; 
     gap: 24px; 
 }
+
 .footer-links a { 
     font-size: 13px; 
     color: rgba(255,255,255,0.5); 
     text-decoration: none; 
     transition: color 0.2s; 
 }
+
 .footer-links a:hover { 
     color: var(--gold); 
 }
 
+.carrossel-controles {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.btn-seta {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-seta:hover:not(:disabled) {
+    background: var(--gold);
+    color: var(--white);
+}
 
 @media (max-width: 768px) {
   .navbar {
     padding: 20px 24px;
   }
-    .cards {
-  grid-template-columns: 1fr;
-    }
-.stat-label {
-  font-size: 12px;
-  letter-spacing: 0;
-}
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
   .navLinks {
     display: none;
     flex-direction: column;
